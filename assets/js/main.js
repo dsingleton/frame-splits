@@ -5,8 +5,9 @@
 
 	FrameView.prototype.render = function(layout, urls) {
 		this.$root.empty()
-			.removeClass(this.$root.attr('data-layout-class'))
-			.addClass('layout-' + layout);
+			.removeClass('layout-' + this.$root.attr('data-layout-class'))
+			.addClass('layout-' + layout)
+			.attr('data-layout-class', layout);
 
 		this.$root.append(
 			$(urls).map(function(index, url) {
