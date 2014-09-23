@@ -1,0 +1,36 @@
+/* http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+html { box-sizing: border-box; } *, *:before, *:after { box-sizing: inherit; }
+
+
+html, body {
+  height: 100%;
+}
+
+.container,
+.layout {
+  height: 100%;
+}
+
+.layout .item {
+  float: left;
+  height: 100%;
+  width: 100%;
+  border: 2px solid #000;
+}
+
+/**
+    Layouts
+*/
+
+.layout-2row .item { height: 50%; }
+
+.layout-2col .item { width: 50%; }
+
+.layout-3row .item { height: 33.3%; }
+
+.layout-3col .item { width: 33.3%; }
+
+.layout-2x2 .item { width: 50%; height: 50%; }
+
+.layout-2x1 .item { width: 50%; height: 50%; }
+.layout-2x1 .item-1 { height: 100%; }
