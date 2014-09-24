@@ -11,6 +11,10 @@ html, body {
   height: 100%;
 }
 
+.layout {
+  overflow: hidden;
+}
+
 .layout .item {
   float: left;
   height: 100%;

@@ -33,42 +33,42 @@
       <ol>
         <li>
           <label for="layout-2row">
-            <input type="radio" id="layout-2row", name="layout" value="2row">
+            <input type="radio" id="layout-2row" name="layout" value="2row">
             2row
           </label>
         </li>
 
         <li>
           <label for="layout-2col">
-            <input type="radio" id="layout-2col", name="layout" value="2col">
+            <input type="radio" id="layout-2col" name="layout" value="2col">
             2col
           </label>
         </li>
 
         <li>
           <label for="layout-3row">
-            <input type="radio" id="layout-3row", name="layout" value="3row">
+            <input type="radio" id="layout-3row" name="layout" value="3row">
             3row
           </label>
         </li>
 
         <li>
           <label for="layout-3col">
-            <input type="radio" id="layout-3col", name="layout" value="3col">
+            <input type="radio" id="layout-3col" name="layout" value="3col">
             3col
           </label>
         </li>
 
         <li>
           <label for="layout-2x2">
-            <input type="radio" id="layout-2x2", name="layout" value="2x2">
+            <input type="radio" id="layout-2x2" name="layout" value="2x2">
             2x2
           </label>
         </li>
 
         <li>
           <label for="layout-2x1">
-            <input type="radio" id="layout-2x1", name="layout" value="2x1">
+            <input type="radio" id="layout-2x1" name="layout" value="2x1">
             2x1
           </label>
         </li>
@@ -102,5 +102,19 @@
 
   </form>
   </div>
+
+  <script src="vendor/assets/js/jquery.js"></script>
+  <script>
+  $(function() {
+    $("input[name='layout']").map(function() {
+      var $this = $(this);
+      $this.parent('label').append(
+        $('<div class="layout layout-thumb layout-' + $this.val() + '">').append(
+          $('<div class="item item-1"></div><div class="item item-2"></div><div class="item item-3"></div><div class="item item-4"></div></div>')
+        )
+      );
+    });
+  });
+  </script>
 </body>
 </html>
