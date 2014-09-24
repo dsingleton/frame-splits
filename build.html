@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="vendor/assets/css/reset.css" type="text/css" />
+  <link rel="stylesheet" href="assets/css/main.css" type="text/css" />
+
+  <style type="text/css">
+
+  .build .layout-options ol li {
+    display: inline-block;
+  }
+
+  .build .layout-thumb {
+    height: 50px;
+    width: 50px;
+  }
+
+  .build .config {
+    margin: 1em 0;
+  }
+
+  </style>
+</head>
+
+<body class="build">
+  <div class="container">
+  <form action="./index.html">
+
+    <div class="layout-options">
+      <h2>Pick Layout</h2>
+      <ol>
+        <li>
+          <label for="layout-2row">
+            <input type="radio" id="layout-2row", name="layout" value="2row">
+            2row
+          </label>
+        </li>
+
+        <li>
+          <label for="layout-2col">
+            <input type="radio" id="layout-2col", name="layout" value="2col">
+            2col
+          </label>
+        </li>
+
+        <li>
+          <label for="layout-3row">
+            <input type="radio" id="layout-3row", name="layout" value="3row">
+            3row
+          </label>
+        </li>
+
+        <li>
+          <label for="layout-3col">
+            <input type="radio" id="layout-3col", name="layout" value="3col">
+            3col
+          </label>
+        </li>
+
+        <li>
+          <label for="layout-2x2">
+            <input type="radio" id="layout-2x2", name="layout" value="2x2">
+            2x2
+          </label>
+        </li>
+
+        <li>
+          <label for="layout-2x1">
+            <input type="radio" id="layout-2x1", name="layout" value="2x1">
+            2x1
+          </label>
+        </li>
+      </ol>
+    </div>
+
+    <div class="config">
+      <h2>Set URLs</h2>
+
+      <ol>
+        <li>
+          <label for="url-1">URL #1</label>
+          <input type="text" id="url-1" name="url[]" value="" />
+        </li>
+
+        <li>
+          <label for="url-2">URL #2</label>
+          <input type="text" id="url-2" name="url[]" value="" />
+        </li>
+
+        <li>
+          <label for="url-3">URL #3</label>
+          <input type="text" id="url-3" name="url[]" value="" />
+        </li>
+      </ol>
+    </div>
+
+    <div class="">
+      <input type="submit" value="Build Layout" />
+    </div>
+
+  </form>
+  </div>
+</body>
+</html>
