@@ -5,30 +5,14 @@
   <title></title>
   <link rel="stylesheet" href="vendor/assets/css/reset.css" type="text/css" />
   <link rel="stylesheet" href="assets/css/main.css" type="text/css" />
-
-  <style type="text/css">
-
-  .build .layout-options ol li {
-    display: inline-block;
-  }
-
-  .build .layout-thumb {
-    height: 50px;
-    width: 50px;
-  }
-
-  .build .config {
-    margin: 1em 0;
-  }
-
-  </style>
+  <link rel="stylesheet" href="assets/css/build.css" type="text/css" />
 </head>
 
 <body class="build">
   <div class="container">
   <form action="./index.html">
 
-    <div class="layout-options">
+    <section class="layout">
       <h2>Pick Layout</h2>
       <ol>
         <li>
@@ -73,32 +57,37 @@
           </label>
         </li>
       </ol>
-    </div>
+    </section>
 
-    <div class="config">
+    <section class="urls">
       <h2>Set URLs</h2>
 
       <ol>
         <li>
-          <label for="url-1">URL #1</label>
-          <input type="text" id="url-1" name="url[]" value="" />
+          <label for="url_1">URL #1</label>
+          <input type="text" id="url_1" name="url[]" value="" />
         </li>
 
         <li>
-          <label for="url-2">URL #2</label>
-          <input type="text" id="url-2" name="url[]" value="" />
+          <label for="url_2">URL #2</label>
+          <input type="text" id="url_2" name="url[]" value="" />
         </li>
 
         <li>
-          <label for="url-3">URL #3</label>
+          <label for="url_3">URL #3</label>
           <input type="text" id="url-3" name="url[]" value="" />
         </li>
-      </ol>
-    </div>
 
-    <div class="">
+        <li>
+          <label for="url_4">URL #4</label>
+          <input type="text" id="url_4" name="url[]" value="" />
+        </li>
+      </ol>
+    </section>
+
+    <section class="controls">
       <input type="submit" value="Build Layout" />
-    </div>
+    </section>
 
   </form>
   </div>
@@ -106,6 +95,7 @@
   <script src="vendor/assets/js/jquery.js"></script>
   <script>
   $(function() {
+    $('body').addClass('js-enhanced')
     $("input[name='layout']").map(function() {
       var $this = $(this);
       $this.parent('label').append(

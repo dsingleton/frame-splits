@@ -1,0 +1,26 @@
+body {
+  font: medium/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+section {
+  padding: 15px 30px;
+  max-width: 900px;
+  margin: 1em auto;
+}
+
+h2 {
+  margin: .5em 0;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+ol li {
+  list-style: disc;
+  padding: 5px 0;
+  list-style-position: inside;
+}
+
+.layout-thumb {
+  height: 50px;
+  width: 50px;
+}
