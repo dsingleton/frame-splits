@@ -25,19 +25,45 @@ ol li {
   width: 50px;
 }
 
+/* Visually hidden */
+.js-enhanced h2,
+.js-enhanced section.layouts input,
+.js-enhanced section.layouts label span,
+.js-enhanced section.urls label  {
+  position: absolute;
+  left: -9999em;
+}
+
 .js-enhanced ol li {
   list-style: none;
 }
 
-.js-enhanced section.layout ol li {
-  display: inline-block;
+.js-enhanced section {
+  margin: 0 auto;
 }
 
-.js-enhanced section.layout ol li.selected .layout {
+.js-enhanced section.layouts ol li {
+  display: inline-block;
+  margin: 0 5px 0 0;
+}
+
+.js-enhanced section.layouts ol li.selected .layout {
   background: orange;
 }
 
 .js-enhanced section.urls ol {
-  height: 300px;
+  height: 400px;
+}
+
+.js-enhanced section.urls ol li {
+  text-align: center;
+}
+
+.js-enhanced section.urls ol li input {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 80%;
+  font-size: 16px;
 }
 

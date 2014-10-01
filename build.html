@@ -12,48 +12,48 @@
   <div class="container">
   <form action="./index.html">
 
-    <section class="layout">
+    <section class="layouts">
       <h2>Pick Layout</h2>
       <ol>
         <li>
           <label for="layout-2row">
             <input type="radio" id="layout-2row" name="layout" value="2row">
-            2row
+            <span>2row</span>
           </label>
         </li>
 
         <li>
           <label for="layout-2col">
             <input type="radio" id="layout-2col" name="layout" value="2col">
-            2col
+            <span>2col</span>
           </label>
         </li>
 
         <li>
           <label for="layout-3row">
             <input type="radio" id="layout-3row" name="layout" value="3row">
-            3row
+            <span>3row</span>
           </label>
         </li>
 
         <li>
           <label for="layout-3col">
             <input type="radio" id="layout-3col" name="layout" value="3col">
-            3col
+            <span>3col</span>
           </label>
         </li>
 
         <li>
           <label for="layout-2x2">
             <input type="radio" id="layout-2x2" name="layout" value="2x2">
-            2x2
+            <span>2x2</span>
           </label>
         </li>
 
         <li>
           <label for="layout-2x1">
             <input type="radio" id="layout-2x1" name="layout" value="2x1">
-            2x1
+            <span>2x1</span>
           </label>
         </li>
       </ol>
@@ -111,7 +111,7 @@
     // Setup non-dynamic URL layout classes
     $('section.urls ol').addClass('layout').find('> li').each(function(index, item) {
       $(item).addClass('item item-' + (index+1));
-    });
+    }).find('input').attr('placeholder', 'URL to be displayed in this part of the layout');
 
     // Update the URL classes on layout change
     $("input[name=layout]:radio").change(function() {
