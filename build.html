@@ -94,50 +94,13 @@
 
   <script src="vendor/assets/js/jquery.js"></script>
   <script src="vendor/assets/js/query-param.js"></script>
+  <script src="assets/js/build.js"></script>
   <script>
   $(function() {
-    var params = getQueryParams(document.location.search);
+    var params = getQueryParams(document.location.search),
+        view = new BuildView($('body'));
 
-    // Scope for progressively enhanced styling
-    $('body').addClass('js-enhanced');
-
-    // Enhance the display of layouts
-    $("input[name='layout']").map(function() {
-      var $this = $(this);
-      $this.parent('label').append(
-        $('<div class="layout layout-thumb layout-' + $this.val() + '">').append(
-          $('<div class="item item-1"></div><div class="item item-2"></div><div class="item item-3"></div><div class="item item-4"></div></div>')
-        )
-      );
-    });
-
-    // Setup non-dynamic URL layout classes
-    $('section.urls ol').addClass('layout').find('> li').each(function(index, item) {
-      $(item).addClass('item item-' + (index+1));
-    }).find('input').attr('placeholder', 'URL to be displayed in this part of the layout');
-
-    if (params.url) {
-      $('section.urls ol > li').each(function(index, item) {
-        if (params.url[index]) {
-          $(item).find('input').attr('value', params.url[index])
-        }
-      });
-    }
-
-    // Update the URL classes on layout change
-    $("input[name=layout]:radio").change(function() {
-      $(this).parents('li').siblings().removeClass('selected');
-      $(this).parents('li').addClass('selected');
-      $('section.urls ol').attr('class', 'layout layout-' + $(this).attr('value'));
-    })
-
-    // Default layout is set by query param, or defaults to the first one
-    var $initialLayout = $("input[name=layout]:radio").first()
-    if (params.layout) {
-      $initialLayout = $("#layout-" + params.layout)
-    }
-    $initialLayout.prop('checked', true).trigger('change');
-
+    view.update(params);
   });
   </script>
 </body>
