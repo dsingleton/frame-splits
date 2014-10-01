@@ -38,3 +38,6 @@ html, body {
 
 .layout-2x1 .item { width: 50%; height: 50%; }
 .layout-2x1 .item-1 { height: 100%; }
+
+.layout-2x1ish .item { width: 67%; height: 50%; }
+.layout-2x1ish .item-1 { height: 100%; width: 33%; }
