@@ -95,7 +95,10 @@
   <script src="vendor/assets/js/jquery.js"></script>
   <script>
   $(function() {
-    $('body').addClass('js-enhanced')
+    // Scope for progressively enhanced styling
+    $('body').addClass('js-enhanced');
+
+    // Enhance the display of layouts
     $("input[name='layout']").map(function() {
       var $this = $(this);
       $this.parent('label').append(
@@ -104,6 +107,21 @@
         )
       );
     });
+
+    // Setup non-dynamic URL layout classes
+    $('section.urls ol').addClass('layout').find('> li').each(function(index, item) {
+      $(item).addClass('item item-' + (index+1));
+    });
+
+    // Update the URL classes on layout change
+    $("input[name=layout]:radio").change(function() {
+      $(this).parents('li').siblings().removeClass('selected');
+      $(this).parents('li').addClass('selected');
+      $('section.urls ol').attr('class', 'layout layout-' + $(this).attr('value'));
+    })
+    // Trigger URL layout for the first layout option
+    .first().prop('checked', true).trigger('change');
+
   });
   </script>
 </body>

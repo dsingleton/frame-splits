@@ -24,3 +24,20 @@ ol li {
   height: 50px;
   width: 50px;
 }
+
+.js-enhanced ol li {
+  list-style: none;
+}
+
+.js-enhanced section.layout ol li {
+  display: inline-block;
+}
+
+.js-enhanced section.layout ol li.selected .layout {
+  background: orange;
+}
+
+.js-enhanced section.urls ol {
+  height: 300px;
+}
+
