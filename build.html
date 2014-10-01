@@ -93,8 +93,11 @@
   </div>
 
   <script src="vendor/assets/js/jquery.js"></script>
+  <script src="vendor/assets/js/query-param.js"></script>
   <script>
   $(function() {
+    var params = getQueryParams(document.location.search);
+
     // Scope for progressively enhanced styling
     $('body').addClass('js-enhanced');
 
@@ -113,14 +116,27 @@
       $(item).addClass('item item-' + (index+1));
     }).find('input').attr('placeholder', 'URL to be displayed in this part of the layout');
 
+    if (params.url) {
+      $('section.urls ol > li').each(function(index, item) {
+        if (params.url[index]) {
+          $(item).find('input').attr('value', params.url[index])
+        }
+      });
+    }
+
     // Update the URL classes on layout change
     $("input[name=layout]:radio").change(function() {
       $(this).parents('li').siblings().removeClass('selected');
       $(this).parents('li').addClass('selected');
       $('section.urls ol').attr('class', 'layout layout-' + $(this).attr('value'));
     })
-    // Trigger URL layout for the first layout option
-    .first().prop('checked', true).trigger('change');
+
+    // Default layout is set by query param, or defaults to the first one
+    var $initialLayout = $("input[name=layout]:radio").first()
+    if (params.layout) {
+      $initialLayout = $("#layout-" + params.layout)
+    }
+    $initialLayout.prop('checked', true).trigger('change');
 
   });
   </script>
