@@ -41,3 +41,6 @@ html, body {
 
 .layout-2x1ish .item { width: 67%; height: 50%; }
 .layout-2x1ish .item-1 { height: 100%; width: 33%; }
+
+.layout-1x2 .item { width: 50%; height: 67%; }
+.layout-1x2 .item-1 { height: 33%; width: 100%; }
