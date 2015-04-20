@@ -44,3 +44,6 @@ html, body {
 
 .layout-1x2 .item { width: 50%; height: 67%; }
 .layout-1x2 .item-1 { height: 33%; width: 100%; }
+
+.layout-banner-plus-3col .item { width: 33.3%; height: 67%; }
+.layout-banner-plus-3col .item-1 { width: 100%; height: 33%; }
