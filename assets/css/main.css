@@ -4,6 +4,38 @@ html { box-sizing: border-box; } *, *:before, *:after { box-sizing: inherit; }
 
 html, body {
   height: 100%;
+  font: medium/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.build-link a {
+  display: block;
+  width: 100%;
+  padding: 1em;
+
+  font-size: 2em;
+}
+
+.js-enabled .build-link {
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  margin-top: -150px;
+  padding-bottom: 100px;
+
+  text-align: center;
+
+  transition: margin-top ease .75s;
+}
+
+.js-enabled .build-link a {
+  background: #222;
+  color: #fff;
+  border-bottom: 4px solid #000;
+}
+
+.js-enabled .build-link:hover {
+  margin-top: 0px;
 }
 
 .container,
