@@ -3,7 +3,10 @@
 		this.$root = $root;
 	};
 
-	FrameView.prototype.render = function(layout, urls) {
+	FrameView.prototype.render = function(layout, urls, title) {
+
+		this.$root.parents('html').find('title').text(title || 'Frame Splits')
+
 		this.$root.empty()
 			.removeClass('layout-' + this.$root.attr('data-layout-class'))
 			.addClass('layout-' + layout)
