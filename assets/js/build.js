@@ -34,12 +34,19 @@
   };
 
   BuildView.prototype.update = function(params) {
+    if (params.title) {
+      this.updateTitle(params.title);
+    }
     if (params.url) {
       this.updateUrls(params.url);
     }
     if (params.layout) {
       this.updateLayout(params.layout);
     }
+  };
+
+  BuildView.prototype.updateTitle = function(title) {
+    $('input[name=title]').attr('value', title);
   };
 
   BuildView.prototype.updateLayout = function(layout) {
