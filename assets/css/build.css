@@ -20,6 +20,12 @@ ol li {
   list-style-position: inside;
 }
 
+.title input {
+  min-width: 300px;
+  font-size: 16px;
+  margin-left: .25em;
+}
+
 .layout-thumb {
   height: 50px;
   width: 50px;
