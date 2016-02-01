@@ -79,3 +79,7 @@ html, body {
 
 .layout-banner-plus-3col .item { width: 33.3%; height: 67%; }
 .layout-banner-plus-3col .item-1 { width: 100%; height: 33%; }
+
+.layout-sidebar-plus-3row .item { width: 50%; height: 33%; }
+.layout-sidebar-plus-3row .item:last-child { width: 50%; height: 34%; }
+.layout-sidebar-plus-3row .item-1 { width: 50%; height: 100%; }
